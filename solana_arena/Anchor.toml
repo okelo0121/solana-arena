@@ -1,0 +1,19 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+solana_arena = "FLDK6cFtbf15bd88aVGYmWsGd4btFzyUuJjwV2urpw4y"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "C:/Users/ADMIN/.config/solana/id.json"
+
+[scripts]
+test = "yarn run mocha -t 1000000 tests/"

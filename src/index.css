@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(10, 20, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 51, 26, 0.5);
+  }
+
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(6, 249, 6, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(6, 249, 6, 0.05) 1px, transparent 1px);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(6, 249, 6, 0.2);
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .sound-bar {
+    animation: sound-wave 1s ease-in-out infinite;
+  }
+
+  .confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    animation: confetti-fall 4s linear infinite;
+    z-index: 40;
+  }
+
+  .glass {
+    background: rgba(10, 25, 10, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .neon-glow-green {
+    box-shadow: 0 0 15px rgba(6, 249, 6, 0.4);
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  }
+
+  .digital-font {
+    font-family: 'Space Grotesk', monospace;
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+  }
+
+  .candlestick-container {
+    background-image: linear-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .podium-gradient {
+    background: linear-gradient(180deg, rgba(6, 249, 6, 0.1) 0%, rgba(7, 12, 7, 0.8) 100%);
+  }
+
+  .spotlight-green {
+    background: radial-gradient(circle, rgba(6, 249, 6, 0.15) 0%, transparent 70%);
+  }
+
+  .spotlight-purple {
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(6, 249, 6, 0.2);
+    border-color: rgba(6, 249, 6, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(6, 249, 6, 0.6);
+    border-color: rgba(6, 249, 6, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(6, 249, 6, 0.2);
+    border-color: rgba(6, 249, 6, 0.2);
+  }
+}
+
+@keyframes sound-wave {
+
+  0%,
+  100% {
+    height: 4px;
+    opacity: 0.3;
+  }
+
+  50% {
+    height: 16px;
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+body {
+  @apply bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-primary selection:text-background-dark;
+}

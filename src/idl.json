@@ -1,0 +1,507 @@
+{
+  "address": "FLDK6cFtbf15bd88aVGYmWsGd4btFzyUuJjwV2urpw4y",
+  "metadata": {
+    "name": "solana_arena",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "close_position",
+      "discriminator": [
+        123,
+        134,
+        81,
+        0,
+        49,
+        68,
+        98,
+        98
+      ],
+      "accounts": [
+        {
+          "name": "arena_round",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  114,
+                  101,
+                  110,
+                  97
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player",
+          "signer": true,
+          "relations": [
+            "player_session"
+          ]
+        },
+        {
+          "name": "pyth_oracle"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "execute_trade",
+      "discriminator": [
+        77,
+        16,
+        192,
+        135,
+        13,
+        0,
+        106,
+        97
+      ],
+      "accounts": [
+        {
+          "name": "arena_round",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  114,
+                  101,
+                  110,
+                  97
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player",
+          "signer": true,
+          "relations": [
+            "player_session"
+          ]
+        },
+        {
+          "name": "pyth_oracle"
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "amount_usd",
+          "type": "u64"
+        },
+        {
+          "name": "leverage",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "initialize_round",
+      "discriminator": [
+        43,
+        135,
+        19,
+        93,
+        14,
+        225,
+        131,
+        188
+      ],
+      "accounts": [
+        {
+          "name": "arena_round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  114,
+                  101,
+                  110,
+                  97
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "join_arena",
+      "discriminator": [
+        135,
+        217,
+        203,
+        200,
+        93,
+        181,
+        131,
+        47
+      ],
+      "accounts": [
+        {
+          "name": "player_session",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "settle_round",
+      "discriminator": [
+        40,
+        101,
+        18,
+        1,
+        31,
+        129,
+        52,
+        77
+      ],
+      "accounts": [
+        {
+          "name": "arena_round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  114,
+                  101,
+                  110,
+                  97
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_leaderboard",
+      "discriminator": [
+        29,
+        47,
+        23,
+        191,
+        109,
+        10,
+        82,
+        26
+      ],
+      "accounts": [
+        {
+          "name": "arena_round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  114,
+                  101,
+                  110,
+                  97
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_session",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  101,
+                  115,
+                  115,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player",
+          "signer": true,
+          "relations": [
+            "player_session"
+          ]
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ArenaRound",
+      "discriminator": [
+        35,
+        84,
+        89,
+        5,
+        49,
+        201,
+        139,
+        194
+      ]
+    },
+    {
+      "name": "PlayerSession",
+      "discriminator": [
+        89,
+        95,
+        51,
+        45,
+        127,
+        42,
+        173,
+        223
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "RoundNotActive",
+      "msg": "Round is not active"
+    },
+    {
+      "code": 6001,
+      "name": "RoundEnded",
+      "msg": "Round timer has ended. No new trades allowed."
+    },
+    {
+      "code": 6002,
+      "name": "RoundStillActive",
+      "msg": "Round is still active. Cannot settle yet."
+    },
+    {
+      "code": 6003,
+      "name": "InvalidSide",
+      "msg": "Invalid Trade Side"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidLeverage",
+      "msg": "Invalid Leverage Multiplier (Must be 1x-50x)"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidOracle",
+      "msg": "Invalid Oracle Account"
+    },
+    {
+      "code": 6006,
+      "name": "OracleOffline",
+      "msg": "Oracle is offline"
+    },
+    {
+      "code": 6007,
+      "name": "InsufficientFunds",
+      "msg": "Insufficient virtual balance for margin"
+    },
+    {
+      "code": 6008,
+      "name": "RoundAlreadySettled",
+      "msg": "Round has already been settled"
+    }
+  ],
+  "types": [
+    {
+      "name": "ArenaRound",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "start_time",
+            "type": "i64"
+          },
+          {
+            "name": "end_time",
+            "type": "i64"
+          },
+          {
+            "name": "is_active",
+            "type": "bool"
+          },
+          {
+            "name": "is_settled",
+            "type": "bool"
+          },
+          {
+            "name": "top_players",
+            "type": {
+              "array": [
+                "pubkey",
+                3
+              ]
+            }
+          },
+          {
+            "name": "top_balances",
+            "type": {
+              "array": [
+                "u64",
+                3
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerSession",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "virtual_balance",
+            "type": "u64"
+          },
+          {
+            "name": "position_side",
+            "type": "u8"
+          },
+          {
+            "name": "position_size_usd",
+            "type": "u64"
+          },
+          {
+            "name": "entry_price",
+            "type": "i64"
+          },
+          {
+            "name": "leverage",
+            "type": "u8"
+          },
+          {
+            "name": "realized_pnl",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+}
