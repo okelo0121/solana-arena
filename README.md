@@ -336,8 +336,15 @@ By combining **trading, gaming, and blockchain**, Solana Arena introduces a new 
 
 GitHub Repository
 
-https://github.com/okelo0121/solana-arena
 
+npm install
+npm run dev
+``````bash```bash
+git clone https://github.com/okelo0121/solana-arena.git
+cd solana-arena
+npm install
+npm run dev
+```
 ---
 
 # Built For
