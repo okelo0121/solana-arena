@@ -189,6 +189,73 @@ Wallet
 
 ---
 
+## Tagline
+
+**Solana Arena** is a real-time trading competition platform where players battle using trading strategies in fast-paced arena rounds powered by **Solana** and **MagicBlock Ephemeral Rollups**.
+
+---
+
+## Current MVP Interface
+
+The current interface demonstrates the core trading experience:
+
+• Wallet connection  
+• Trading dashboard  
+• Long / Short position controls  
+• Live price charts powered by Binance API  
+• Real-time performance tracking  
+
+Additional UI components such as the **round lobby, tournament entry system, and automated round management** are part of the next development phase and are already supported in the smart contract logic.
+
+---
+
+## Use Cases
+
+### Learn Trading Without Risk
+New users can practice trading strategies in a competitive environment without risking real funds.
+
+### Competitive Trading Tournaments
+Communities can host tournaments where traders compete for rewards and recognition.
+
+### Esports-Style Trading
+Solana Arena transforms trading into a competitive experience where players compete in timed rounds and spectators can follow live leaderboards.
+
+### DeFi Education
+The platform can be used to teach key trading concepts such as:
+
+• leverage  
+• liquidation  
+• risk management  
+• market timing  
+
+This creates an engaging environment for learning how real markets behave.
+
+---
+
+## Security and Fairness
+
+Solana Arena uses transparent on-chain logic to ensure fairness and trust.
+
+• All round results are verified on-chain  
+• Leaderboards cannot be manipulated  
+• Prize distribution is executed by the smart contract  
+• Player sessions are deterministic using PDAs  
+• Market data is sourced from real-world price feeds  
+
+This guarantees that all outcomes are determined by verifiable smart contract logic.
+
+---
+
+## Impact
+
+Solana Arena introduces a new category of **competitive finance**, combining elements of:
+
+• gaming  
+• trading  
+• blockchain transparency  
+
+By transforming trading into a competitive arena, the platform lowers the barrier for new traders while creating a social and educational experience around financial markets.
+
 # Example Game Flow
 
 1. Player connects wallet
